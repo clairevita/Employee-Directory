@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export default {
-    getRandomDog: function() {
+    getRandomUser: function() {
       return axios.get("https://randomuser.me/api/");
     }
   };
