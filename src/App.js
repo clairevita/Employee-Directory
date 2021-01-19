@@ -1,12 +1,17 @@
 import React from "react";
-import "./App.css";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import Employees from "./pages/employees";
+import Wrapper from "./components/Wrapper";
 
 function App() {
   return (
+    <Router>
       <div>
-          Hello, World!
+        <Wrapper>
+          <Route exact path="/" component={Employees} /> 
+        </Wrapper>   
       </div>
+    </Router>
   );
 }
 
