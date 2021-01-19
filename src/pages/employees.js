@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 import API from "../utils/API";
-import Container from "../components/Container";
-import Alert from "../components/Alert";
 import Card from "../components/Card";
 
 class Employees extends Component {
