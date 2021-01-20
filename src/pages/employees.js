@@ -37,6 +37,8 @@ class Employees extends Component {
             <div>
                 <Card image={this.state.image} />
                 <h1 className="text-center">{this.state.first} {this.state.last}</h1>
+                <h2 className="text-center">{this.state.email} - {this.state.username}</h2>
+                <h2  className="text-center">{this.state.city}, {this.state.country}</h2>
             </div>
         )
     }
