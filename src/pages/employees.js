@@ -6,7 +6,11 @@ class Employees extends Component {
     state = {
       image: "",
       first: "",
-      last: ""
+      last: "",
+      email: "",
+      username: "",
+      city: "",
+      country: ""
     };
     componentDidMount() {
         this.getUser();
@@ -18,7 +22,11 @@ class Employees extends Component {
             this.setState({
                 image: res.data.results[0].picture.large,
                 first: res.data.results[0].name.first,
-                last: res.data.results[0].name.last
+                last: res.data.results[0].name.last,
+                email: res.data.results[0].email,
+                username: res.data.results[0].login.username,
+                city: res.data.results[0].location.city,
+                country: res.data.results[0].location.country
             })
             )
             .catch(err => console.log(err));
