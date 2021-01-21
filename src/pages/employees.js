@@ -15,7 +15,6 @@ class Employees extends Component {
     componentDidMount() {
         this.getUser();
       }
-
       getUser = () => {
         API.getRandomUser()
         .then(res =>
