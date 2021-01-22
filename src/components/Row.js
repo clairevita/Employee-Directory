@@ -12,10 +12,13 @@ function Row(props) {
           {result.name.last}
         </td>
         <td>
-          {result.email}
+          {result.location.state}
         </td>
         <td>
-          {result.login.username}
+          {result.location.city}
+        </td>
+        <td>
+          {result.email}
         </td>
         </tr>
       ))}
