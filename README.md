@@ -29,7 +29,11 @@ Go to [localhost:3000](http://localhost:3000/) to view the application.
 
   ## Usage
 
-Load the web app either from your localhost or via the Heroku deployed site. Tap the table headings to sort each column in the order you would like to access the data. To look for a specific "employee", type a name into the searchbar. As you type, the app will automatically update the table to feature users with relevant names.  
+Load the web app either from your localhost or via the Heroku deployed site. Tap the table headings to sort each column in the order you would like to access the data. The circle icon next to the heading will change to an arrow, pointing in the direction that you've sorted the results.
+
+To look for a specific "employee", type a name into the searchbar. As you type, the app will automatically update the table to feature users with relevant names.  
+
+Sorting and filtering and can be done simultaneously, letting the end user identify employees with ease.
 
   ## Contributions
   As this is a project for the UPenn LPS Bootcamp, contributions will not be accepted. Any interested parties may reach me at clairej.vita@gmail.com.
