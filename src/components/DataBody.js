@@ -8,7 +8,7 @@ const DataBody = () => {
         <tbody>
             {context.developerState.altUserList.map(({ login, name, email, location }) => {
                     return (
-                        <tr key={login.uuid}>
+                        <tr>
                             <td data-th="Name" className="name-cell align-middle">
                                 {name.first} {name.last}
                             </td>

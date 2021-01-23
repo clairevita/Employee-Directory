@@ -5,16 +5,14 @@ const Search = () => {
     const context = useContext(DataContext);
 
     return (
-        <div className="searchbox">
-            <form className="form-inline">
-                <input
-                    className="form-control"
-                    type="search"
-                    placeholder="Search"
-                    onChange={e => context.handleSearchChange(e)}
-                />
-            </form>
-        </div>
+        <form className="form-inline">
+            <input
+                className="form-control"
+                type="search"
+                placeholder="Search"
+                onChange={e => context.handleSearchChange(e)}
+            />
+        </form>
     );
 }
 export default Search;
