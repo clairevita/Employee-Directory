@@ -1,17 +1,18 @@
-import React from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
-import Employees from "./pages/employees";
-import Wrapper from "./components/Wrapper";
+
+import React from 'react';
+import Search from './components/Search';
+import Main from './components/Main';
+import Wrapper from './components/Wrapper';
 
 function App() {
   return (
-    <Router>
-      <div>
-        <Wrapper>
-          <Route exact path="/" component={Employees} /> 
-        </Wrapper>   
-      </div>
-    </Router>
+    <div className="App">
+      
+   <Wrapper>
+   
+     <Main />
+   </Wrapper>
+    </div>
   );
 }
 
