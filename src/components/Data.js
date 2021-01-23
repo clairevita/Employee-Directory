@@ -10,57 +10,13 @@ const DataArea = () => {
         order: "ascend",
         filteredUsers: [],
         headings: [
-          { name: "Image", width: "20%", },
           { name: "Name", width: "20%", },
           { name: "Email", width: "20%", },
           { name: "City", width: "20%", },
           { name: "State", width: "20%", }
         ]
       });
-    
-      const handleSort = heading => {
-        if (developerState.order === "descend") {
-            setDeveloperState({
-                order:"ascend"
-            })
-        } else{
-            setDeveloperState({
-                order:"descend"
-            })
-        }
-    
-        const compareFnc = (a, b) => {
-          if (developerState.order === "ascend") {
-            if (a[heading] === undefined) {
-              return 1;
-            } else if (b[heading] === undefined) {
-              return -1;
-            } else if (heading === "name") {
-              return a[heading].first.localeCompare(b[heading].first);
-            } else {
-              return b[heading] - a[heading];
-            } 
-          } else {
-        if (a[heading] === undefined){
-            return 1;
-        } else if (b[heading] === undefined){
-            return -1;
-        } else if (heading ==="name"){
-            return b[heading].first.localeCompare(a[heading].first);
-        } else {
-            return b[heading]-  a[heading];
-        }
-    }
-    }
-        const sortedUsers = developerState.filteredUsers.sort(compareFnc);
-
-        setDeveloperState({
-          ...developerState,
-          filteredUsers: sortedUsers
-});
-
- };
-   
+       
       const handleSearchChange = event => {
         const filter = event.target.value;
         const filteredList = developerState.users.filter(item => {
@@ -85,7 +41,7 @@ const DataArea = () => {
     
       return (
         <DataContext.Provider
-          value={{ developerState, handleSearchChange, handleSort }}
+          value={{ developerState, handleSearchChange }}
         >
               <Search />
           <div className="data-area">
