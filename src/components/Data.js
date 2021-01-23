@@ -10,7 +10,7 @@ const DataArea = () => {
         order: "ascend",
         altUserList: [],
         headings: [
-            { name: "Name", width: "20%", },
+            { name: <Search />, width: "30%", },
             { name: "Email", width: "20%", },
             { name: "City", width: "20%", },
             { name: "State", width: "20%", }
@@ -20,7 +20,7 @@ const DataArea = () => {
     const handleSearchChange = event => {
         const filter = event.target.value;
         const filteredList = developerState.users.filter(item => {
-            let values = item.name.first.toLowerCase();
+            let values = item.email.toLowerCase();
             return values.indexOf(filter.toLowerCase()) !== -1;
         });
 
@@ -29,6 +29,18 @@ const DataArea = () => {
             altUserList: filteredList
         });
     };
+
+    const handleSorting = () => {
+        if (developerState.order === "descend") {
+            setDeveloperState({
+                order:"ascend"
+            })
+        } else{
+            setDeveloperState({
+                order:"descend"
+            })
+        }
+    }
 
     useEffect(() => {
         API.getRandomUser().then(results => {
@@ -42,9 +54,8 @@ const DataArea = () => {
 
     return (
         <DataContext.Provider
-            value={{ developerState, handleSearchChange }}
+            value={{ developerState, handleSearchChange, handleSorting }}
         >
-            <Search />
             <div className="data-area">
                 <Table /> 
             </div>

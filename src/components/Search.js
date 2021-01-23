@@ -9,7 +9,7 @@ const Search = () => {
             <input
                 className="form-control"
                 type="search"
-                placeholder="Search"
+                placeholder="Name"
                 onChange={e => context.handleSearchChange(e)}
             />
         </form>

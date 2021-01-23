@@ -6,11 +6,11 @@ const DataBody = () => {
 
     return (
         <tbody>
-            {context.developerState.altUserList.map(({ login, name, email, location }) => {
+            {context.developerState.altUserList.map(({ name, email, location }) => {
                     return (
                         <tr>
                             <td data-th="Name" className="name-cell align-middle">
-                                {name.first} {name.last}
+                            {name.last}, {name.first} 
                             </td>
                             <td data-th="Email" className="align-middle">
                                 {email}
