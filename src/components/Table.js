@@ -1,31 +1,42 @@
-import React, { Component } from "react";
-import Row from "./Row";
-import API from "../utils/API";
+  
+import React, { useContext } from "react";
+import DataBody from "./DataBody";
+import DataContext from "../utils/DataContext";
 
-class Table extends Component {
-  state = {
-    results: []
-  };
+const Table = () => {
+    const context = useContext(DataContext);
 
-
-  componentDidMount() {
-    this.getUser();
-  }
-
-  getUser = () => {
-    API.getRandomUser()
-      .then(res => this.setState({ results: res.data.results }))
-      .catch(err => console.log(err));
-  };
-
-
-  render() {
     return (
-      <div>
-        <Row results={this.state.results} />
-      </div>
+
+        <div className="datatable mt-5">
+            <table
+                id="table"
+                className="table table-striped table-hover table-condensed"
+            >
+                <thead>
+                    <tr>
+                        {context.developerState.headings.map(({ name, width }) => {
+                            return (
+                                <th
+                                    className="col"
+                                    key={name}
+                                    style={{ width }}
+                                    onClick={() => {
+                                        context.handleSort(name.toLowerCase());
+                                    }}
+                                >
+                                    {name}
+                                    <span className="pointer"></span>
+                                </th>
+                            );
+                        })}
+                    </tr>
+                </thead>
+
+                <DataBody />
+            </table>
+        </div>
     );
-  }
 }
 
 export default Table;
