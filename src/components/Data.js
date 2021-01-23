@@ -30,8 +30,29 @@ const DataArea = () => {
     };
 
     const handleSorting = heading => {
+    
+            if (heading === "Name"){
+                const emailSort;
+                setDeveloperState({
+                    ...developerState,
+                    altUserList: emailSort
+                });
+            } else if (heading === "City"){
+                const citySort;
+                setDeveloperState({
+                    ...developerState,
+                    altUserList: citySort
+                });
+            } else {
+                const stateSort;
+                setDeveloperState({
+                    ...developerState,
+                    altUserList: stateSort
+                });
 
- 
+            }
+
+        
     }
 
     useEffect(() => {

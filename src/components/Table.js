@@ -14,7 +14,7 @@ const Table = () => {
                         {context.developerState.headings.map(({ name, width }) => {
                             return (
                                 <th style={{ width }}
-                                key={{ name }}
+                                data={{ name }}
                                 onClick={() => {
                                     context.handleSorting({ name });
                                 }}
