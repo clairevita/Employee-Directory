@@ -15,6 +15,7 @@ const Table = () => {
                             return (
                                 <th style={{ width }}
                                 data={{ name }}
+                                id="heading"
                                 onClick={() => {
                                     context.handleSorting({ name });
                                 }}
