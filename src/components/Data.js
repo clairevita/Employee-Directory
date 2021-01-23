@@ -30,21 +30,22 @@ const DataArea = () => {
     };
 
     const handleSorting = heading => {
-    
-            if (heading === "Name"){
-                const emailSort;
-                setDeveloperState({
+            if (heading.name === "Name" || heading.name === "Email"){
+                console.log(heading);
+                const emailSort = developerState.altUserList.sort((a, b)=> (a.email > b.email)? 1: -1);                setDeveloperState({
                     ...developerState,
                     altUserList: emailSort
                 });
-            } else if (heading === "City"){
-                const citySort;
+            } else if (heading.name === "City"){
+                console.log(heading);
+                const citySort = developerState.altUserList.sort((a, b)=> (a.location.city > b.location.city)? 1: -1);
                 setDeveloperState({
                     ...developerState,
                     altUserList: citySort
                 });
-            } else {
-                const stateSort;
+            } else if (heading.name === "State") {
+                const stateSort = developerState.altUserList.sort((a, b)=> (a.location.state > b.location.state)? 1: -1);;
+                console.log(heading);
                 setDeveloperState({
                     ...developerState,
                     altUserList: stateSort
