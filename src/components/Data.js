@@ -10,9 +10,9 @@ const DataArea = () => {
         altUserList: [],
         headings: [
             { name: <Search />, width: "30%", },
-            { name: "Email", width: "20%", },
-            { name: "City", width: "20%", },
-            { name: "State", width: "20%", }
+            { name: "Email •", width: "20%", },
+            { name: "City •", width: "20%", },
+            { name: "State •", width: "20%", }
         ]
     });
 
@@ -30,30 +30,87 @@ const DataArea = () => {
     };
 
     const handleSorting = heading => {
-            if (heading.name === "Name" || heading.name === "Email"){
+            if (heading.name === "Email •" || heading.name === "Email ▲"){
                 console.log(heading);
                 const emailSort = developerState.altUserList.sort((a, b)=> (a.email > b.email)? 1: -1);                setDeveloperState({
                     ...developerState,
-                    altUserList: emailSort
+                    altUserList: emailSort,
+                    headings: [
+                        { name: <Search />, width: "30%", },
+                        { name: "Email ▼", width: "20%", },
+                        { name: "City •", width: "20%", },
+                        { name: "State •", width: "20%", }
+                    ]
                 });
-            } else if (heading.name === "City"){
+            } else if (heading.name === "City •" || heading.name === "City ▲"){
                 console.log(heading);
                 const citySort = developerState.altUserList.sort((a, b)=> (a.location.city > b.location.city)? 1: -1);
                 setDeveloperState({
                     ...developerState,
-                    altUserList: citySort
+                    altUserList: citySort,
+                    headings: [
+                        { name: <Search />, width: "30%", },
+                        { name: "Email •", width: "20%", },
+                        { name: "City ▼", width: "20%", },
+                        { name: "State •", width: "20%", }
+                    ]
                 });
-            } else if (heading.name === "State") {
-                const stateSort = developerState.altUserList.sort((a, b)=> (a.location.state > b.location.state)? 1: -1);;
+            } else if (heading.name === "State •" || heading.name === "State ▲"){
+                console.log(heading);
+                const citySort = developerState.altUserList.sort((a, b)=> (a.location.state > b.location.state)? 1: -1);
+                setDeveloperState({
+                    ...developerState,
+                    altUserList: citySort,
+                    headings: [
+                        { name: <Search />, width: "30%", },
+                        { name: "Email •", width: "20%", },
+                        { name: "City •", width: "20%", },
+                        { name: "State ▼", width: "20%", }
+                    ]
+                });
+            } else if (heading.name === "Email ▼") {
+                const stateSort = developerState.altUserList.sort((a, b)=> (a.email > b.email)? -1: 1);
                 console.log(heading);
                 setDeveloperState({
                     ...developerState,
-                    altUserList: stateSort
+                    altUserList: stateSort,
+                    headings: [
+                        { name: <Search />, width: "30%", },
+                        { name: "Email ▲", width: "20%", },
+                        { name: "City •", width: "20%", },
+                        { name: "State •", width: "20%", }
+                    ]
+                });
+
+            } else if (heading.name === "City ▼") {
+                const stateSort = developerState.altUserList.sort((a, b)=> (a.location.city > b.location.city)? -1: 1);
+                console.log(heading);
+                setDeveloperState({
+                    ...developerState,
+                    altUserList: stateSort,
+                    headings: [
+                        { name: <Search />, width: "30%", },
+                        { name: "Email •", width: "20%", },
+                        { name: "City ▲", width: "20%", },
+                        { name: "State •", width: "20%", }
+                    ]
+                });
+
+            } else if (heading.name === "State ▼") {
+                const stateSort = developerState.altUserList.sort((a, b)=> (a.location.state > b.location.state)? -1: 1);
+                console.log(heading);
+                setDeveloperState({
+                    ...developerState,
+                    altUserList: stateSort,
+                    headings: [
+                        { name: <Search />, width: "30%", },
+                        { name: "Email •", width: "20%", },
+                        { name: "City •", width: "20%", },
+                        { name: "State ▲", width: "20%", }
+                    ]
                 });
 
             }
-
-        
     }
 
     useEffect(() => {
