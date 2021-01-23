@@ -15,9 +15,9 @@ const Table = () => {
                             return (
                                 <th style={{ width }}
                                 key={{ name }}
-                                // onClick={() => {
-                                //     context.handleSorting(name);
-                                // }}
+                                onClick={() => {
+                                    context.handleSorting({ name });
+                                }}
                                 >
                                     {name}
                                 </th>

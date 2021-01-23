@@ -7,7 +7,6 @@ import Search from "./Search"
 const DataArea = () => {
     const [developerState, setDeveloperState] = useState({
         users: [],
-        order: "ascend",
         altUserList: [],
         headings: [
             { name: <Search />, width: "30%", },
@@ -30,16 +29,9 @@ const DataArea = () => {
         });
     };
 
-    const handleSorting = () => {
-        if (developerState.order === "descend") {
-            setDeveloperState({
-                order:"ascend"
-            })
-        } else{
-            setDeveloperState({
-                order:"descend"
-            })
-        }
+    const handleSorting = heading => {
+
+ 
     }
 
     useEffect(() => {
