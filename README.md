@@ -17,7 +17,7 @@ This React Web App uses the randomuser api to generate and navigable table.
 
 ### Heroku Hosted
 
-To view this app, go to [cv-react-directory.herokuapp.com]https://cv-react-directory.herokuapp.com/).
+To view this app, go to [cv-react-directory.herokuapp.com](https://cv-react-directory.herokuapp.com/).
 
 ### Locally Hosted
 
